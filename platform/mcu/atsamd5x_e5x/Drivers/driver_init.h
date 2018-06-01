@@ -24,7 +24,12 @@ extern "C" {
 #include <hal_usart_sync.h>
 #include <hal_flash.h>
 
+extern struct usart_sync_descriptor USART_0;
 extern struct usart_sync_descriptor EDBG_COM;
+
+void USART_0_PORT_init(void);
+void USART_0_CLOCK_init(void);
+void USART_0_init(void);
 
 void EDBG_COM_PORT_init(void);
 void EDBG_COM_CLOCK_init(void);

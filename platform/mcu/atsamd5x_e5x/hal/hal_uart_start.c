@@ -5,7 +5,7 @@
 
 /* Global Variable for VFS DEBUG Output */
 uart_dev_t uart_0 = {
-   .port = 2,    /* uart port */
+   .port = STDIO_UART,    /* uart port */
    .config = {115200, DATA_WIDTH_8BIT, NO_PARITY, STOP_BITS_1, FLOW_CONTROL_DISABLED},  /* uart config */
    .priv = NULL    /* priv data */
 };
@@ -23,9 +23,12 @@ int32_t hal_uart_init(uart_dev_t *uart)
     }
 
     switch (uart->port) {
+        case 0:
+            uart->priv = &USART_0;
+            break;
         case 2:
             uart->priv = &EDBG_COM;
-        break;
+            break;
         /* if ohter uart exist add init code here */
         default:
         break;

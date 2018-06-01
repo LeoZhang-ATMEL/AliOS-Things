@@ -217,7 +217,7 @@ int32_t usart_sync_flow_control_status(const struct usart_sync_descriptor *const
 int32_t usart_sync_is_tx_empty(const struct usart_sync_descriptor *const descr)
 {
 	ASSERT(descr);
-	return _usart_sync_is_byte_sent(&descr->device);
+	return _usart_sync_is_ready_to_send(&descr->device);
 }
 
 /**
@@ -252,14 +252,15 @@ static int32_t usart_sync_write(struct io_descriptor *const io_descr, const uint
 	struct usart_sync_descriptor *descr  = CONTAINER_OF(io_descr, struct usart_sync_descriptor, io);
 
 	ASSERT(io_descr && buf && length);
-	while (!_usart_sync_is_byte_sent(&descr->device))
+	while (!_usart_sync_is_ready_to_send(&descr->device))
 		;
 	do {
 		_usart_sync_write_byte(&descr->device, buf[offset]);
-		while (!_usart_sync_is_byte_sent(&descr->device))
+		while (!_usart_sync_is_ready_to_send(&descr->device))
 			;
 	} while (++offset < length);
-
+	while (!_usart_sync_is_transmit_done(&descr->device))
+		;
 	return (int32_t)offset;
 }
 
