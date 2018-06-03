@@ -36,9 +36,9 @@ $(NAME)_SOURCES := Drivers/atmel_start.c  \
                    Drivers/hal/src/hal_gpio.c    \
                    Drivers/hal/src/hal_init.c \
                    Drivers/hal/src/hal_io.c    \
+                   Drivers/hal/src/hal_rtos.c \
                    Drivers/hal/src/hal_sleep.c   \
-                   Drivers/hal/src/hal_usart_async.c \
-                   Drivers/hal/src/hal_usart_sync.c    \
+                   Drivers/hal/src/hal_usart_os.c \
                    Drivers/hal/utils/src/utils_assert.c    \
                    Drivers/hal/utils/src/utils_event.c \
                    Drivers/hal/utils/src/utils_list.c    \

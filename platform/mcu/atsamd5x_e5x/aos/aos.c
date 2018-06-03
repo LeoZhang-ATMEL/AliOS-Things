@@ -7,6 +7,7 @@
 #include "atmel_start.h"
 #include <k_api.h>
 #include <hal/soc/soc.h>
+#include <hal/wifi.h>
 
 #define AOS_START_STACK 2048
 
@@ -16,6 +17,10 @@ static kinit_t kinit;
 static void sys_init(void);
 extern uart_dev_t uart_0;
 
+#if defined(DEV_SAL_MK3060)
+extern hal_wifi_module_t aos_wifi_module_mk3060;
+#endif
+
 static void sys_init(void)
 {
     kinit.argc = 0;
@@ -24,9 +29,15 @@ static void sys_init(void)
 
 	atmel_start_init();
 	hal_uart_init(&uart_0);
-	board_init();
 
+#if defined(DEV_SAL_MK3060)
+    hal_wifi_register_module(&aos_wifi_module_mk3060);
+    hal_wifi_init();
+#endif
+
+	board_init();
     aos_kernel_init(&kinit);
+
     application_start(0, NULL);	
 }
 
