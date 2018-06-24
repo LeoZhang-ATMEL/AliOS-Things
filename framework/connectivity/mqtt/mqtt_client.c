@@ -2068,9 +2068,10 @@ static int iotx_mc_connect(iotx_mc_client_t *pClient)
 
     utils_time_countdown_ms(&pClient->next_ping_time, pClient->connect_data.keepAliveInterval * 1000);
 
-    aos_poll_read_fd(get_iotx_fd(), cb_recv, pClient);
+    
     aos_post_delayed_action( pClient->connect_data.keepAliveInterval * 1000, cb_recv_timeout, pClient);
     aos_post_event(EV_SYS, CODE_SYS_ON_MQTT_READ, 0u);
+    aos_poll_read_fd(get_iotx_fd(), cb_recv, pClient);
     log_info("mqtt connect success!");
     return SUCCESS_RETURN;
 }

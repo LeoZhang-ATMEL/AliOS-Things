@@ -1,23 +1,49 @@
 {
     "aliosStudio.inner.yosBin": "aos",
-    "aliosStudio.hardware.board": "starterkit",
-    "aliosStudio.name": "helloworld",
+    "aliosStudio.hardware.board": "atsame54-xpro",
+    "aliosStudio.name": "mqttapp",
     "aliosStudio.buildList": [
-        {
-            "name": "clean"
-        },
-        {
-            "name": "helloworld@starterkit"
-        },
-        {
-            "name": "starterkitgui@starterkit"
-        },
-        {
-            "name": "mqttapp@starterkit"
-        }
+        {"name": "clean"},
+        {"name": "helloworld@starterkit"},
+        {"name": "starterkitgui@starterkit"},
+        {"name": "mqttapp@starterkit"}
     ],
     "aliosStudio.build.multiBin": false,
     "aliosStudio.build.multiBinTarget": "app",
     "aliosStudio.flashAllBin": false,
-    "aliosStudio.isAosSource": true
+    "aliosStudio.isAosSource": true,
+    "aliosStudio.sdkPath": "${workspaceRoot}",
+    "aliosStudio.comPort": "COM3",
+    "aliosStudio.hardware.baudrate": 115200,
+    "files.associations": {
+        "condition_variable": "c",
+        "future": "c",
+        "stdlib.h": "c",
+        "k_api.h": "c",
+        "k_sched.h": "c",
+        "k_obj.h": "c",
+        "array": "c",
+        "utils_assert.h": "c",
+        "rope": "cpp",
+        "bitset": "c",
+        "chrono": "c",
+        "limits": "cpp",
+        "valarray": "cpp",
+        "atmel_start.h": "c",
+        "driver_init.h": "c",
+        "hal_usart_os.h": "c",
+        "wifi.h": "c",
+        "stdio.h": "c",
+        "mqtt_client.h": "c",
+        "iot_import.h": "c",
+        "iot_export_mqtt.h": "c",
+        "utils_list.h": "c",
+        "in.h": "c",
+        "reent.h": "c",
+        "segger_rtt.h": "c",
+        "aos.h": "c",
+        "slist": "c",
+        "mutex": "c",
+        "shared_mutex": "c"
+    }
 }

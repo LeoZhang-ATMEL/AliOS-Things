@@ -7,16 +7,16 @@
 #include "cutest/cut.h"
 
 #ifndef SYSINFO_ARCH
-#define SYSINFO_ARCH        ""
+#define SYSINFO_ARCH        "Cortex-M4"
 #endif
 #ifndef SYSINFO_MCU
-#define SYSINFO_MCU         ""
+#define SYSINFO_MCU         "ATSAME54P20A"
 #endif
 #ifndef SYSINFO_DEVICE_NAME
-#define SYSINFO_DEVICE_NAME ""
+#define SYSINFO_DEVICE_NAME "ATSAME54"
 #endif
 #ifndef SYSINFO_APP_VERSION
-#define SYSINFO_APP_VERSION ""
+#define SYSINFO_APP_VERSION "1.0"
 #endif
 #define SYSINFO_KERNEL      "AOS"
 
@@ -55,7 +55,7 @@
 #define TEST_CONFIG_KV_ENABLED                  (1)
 #endif
 #if (TEST_CONFIG_KV_ENABLED > 0)
-#define TEST_CONFIG_KV_TIMES                    (10000)
+#define TEST_CONFIG_KV_TIMES                    (5)
 #endif
 
 /* yloop test */

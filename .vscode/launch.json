@@ -47,10 +47,10 @@
             }
         },
         {
-            "name": "Debug @ Windows",
+            "name": "Debug @ mqttapp@atsame54",
             "type": "cppdbg",
             "request": "launch",
-            "program": "D:\\work\\AliOS-Things\\out\\helloworld@starterkit\\binary\\helloworld@starterkit.elf",
+            "program": "D:\\work\\AliOS-Things\\out\\mqttapp@starterkit\\binary\\mqttapp@atsame54-xpro.elf",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceRoot}",
@@ -64,16 +64,106 @@
                     "text": "cd ${workspaceRoot}"
                 },
                 {
-                    "text": "source .gdbinit"
+                    "text": "target remote localhost:2331"
                 },
                 {
-                    "text": "target remote localhost:4242"
+                    "text": "file out/mqttapp@atsame54-xpro/binary/mqttapp@atsame54-xpro.elf"
                 },
                 {
-                    "text": "file out/helloworld@starterkit/binary/helloworld@starterkit.elf"
+                    "text": "load"
                 },
                 {
-                    "text": "break application_start"
+                    "text": "monitor reset"
+                }
+            ],
+            "customLaunchSetupCommands": [],
+            "launchCompleteCommand": "exec-run",
+            "osx": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb"
+            },
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb.exe"
+            }
+        },
+        {
+            "name": "Debug @ yts@atsame54-xpro",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "D:\\work\\AliOS-Things\\out\\yts@atsame54-xpro\\binary\\yts@atsame54-xpro.elf",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "miDebuggerServerAddress": "localhost:2331",
+            "serverLaunchTimeout": 2000,
+            "targetArchitecture": "ARM",
+            "setupCommands": [
+                {
+                    "text": "cd ${workspaceRoot}"
+                },
+                {
+                    "text": "target remote localhost:2331"
+                },
+                {
+                    "text": "file out/yts@atsame54-xpro/binary/yts@atsame54-xpro.elf"
+                },
+                {
+                    "text": "load"
+                },
+                {
+                    "text": "monitor reset"
+                }
+            ],
+            "customLaunchSetupCommands": [],
+            "launchCompleteCommand": "exec-run",
+            "osx": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb"
+            },
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "arm-none-eabi-gdb.exe"
+            }
+        },
+        {
+            "name": "Debug @ helloworld@atsame54-xpro",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "D:\\work\\AliOS-Things\\out\\helloworld@atsame54-xpro\\binary\\helloworld@atsame54-xpro.elf",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "miDebuggerServerAddress": "localhost:2331",
+            "serverLaunchTimeout": 2000,
+            "targetArchitecture": "ARM",
+            "setupCommands": [
+                {
+                    "text": "cd ${workspaceRoot}"
+                },
+                {
+                    "text": "target remote localhost:2331"
+                },
+                {
+                    "text": "file out/helloworld@atsame54-xpro/binary/helloworld@atsame54-xpro.elf"
+                },
+                {
+                    "text": "load"
+                },
+                {
+                    "text": "monitor reset"
                 }
             ],
             "customLaunchSetupCommands": [],

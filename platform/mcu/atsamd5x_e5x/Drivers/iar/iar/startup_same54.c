@@ -605,6 +605,8 @@ void Dummy_Handler(void)
  */
 void Dummy_Handler2(void)
 {
+  dumpsys_task_func(0, 0, 1);
+ dumpsys_mm_info_func(0);
 	while (1) {
 	}
 }

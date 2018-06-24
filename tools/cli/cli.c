@@ -694,7 +694,7 @@ int aos_cli_stop(void)
 }
 
 #ifndef CONFIG_AOS_CLI_STACK_SIZE
-#define CONFIG_AOS_CLI_STACK_SIZE 2048
+#define CONFIG_AOS_CLI_STACK_SIZE 8192
 #endif
 
 int aos_cli_init(void)
